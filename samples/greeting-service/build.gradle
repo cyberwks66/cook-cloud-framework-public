@@ -1,0 +1,6 @@
+description = 'Sample Greeting-service API'
+
+dependencies {
+    compile project(':internal:sdk')
+}
+

@@ -1,0 +1,11 @@
+description = 'Sample Hello-world API'
+
+dependencies {
+    compile project(':internal:sdk')
+
+    testCompile('junit:junit:4.12')
+    testCompile "org.mockito:mockito-core:2.0.57-beta"
+}
+
+
+

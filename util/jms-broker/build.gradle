@@ -1,0 +1,6 @@
+description = 'Embedded JMS Broker (ActiveMQ)'
+
+dependencies {
+    compile group: 'org.apache.activemq', name: 'activemq-core', version:'5.4.2'
+    compile project(':internal:commons')
+}

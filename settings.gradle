@@ -1,0 +1,20 @@
+rootProject.name = 'cook-cloud-framework'
+include ':internal:commons'
+include ':internal:sdk'
+include ':internal:configuration'
+include ':internal:discovery'
+include ':internal:router'
+include ':internal:turbine'
+include ':internal:cloud-manager'
+include ':internal:service-monitor'
+
+include ':util:verify-self-test'
+include ':util:jms-broker'
+include ':util:bus-trace'
+
+include ':framework:self-test'
+include ':samples:hello-world'
+include ':samples:greeting-service'
+include ':samples:airlines'
+
+

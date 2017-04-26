@@ -1,0 +1,2 @@
+docker rmi -f greeting-service
+docker build -t greeting-service ./src/main/docker/.

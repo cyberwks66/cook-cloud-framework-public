@@ -1,0 +1,17 @@
+description = 'Self-Test API'
+
+dependencies {
+  compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.5'
+  compile group: 'org.apache.commons', name: 'commons-collections4', version: '4.1'
+  compile('org.springframework.cloud:spring-cloud-starter-bus-amqp')
+  compile('org.springframework.cloud:spring-cloud-starter-stream-rabbit')
+  compile('org.springframework.cloud:spring-cloud-bus')
+  compile('org.springframework.cloud:spring-cloud-starter-config')
+  compile('org.springframework.boot:spring-boot-starter-web')
+  compile('org.springframework.boot:spring-boot-starter-actuator')
+  compile('org.springframework.cloud:spring-cloud-starter-eureka')
+
+  //TODO - move these dependencies to the root somehow, since they are common
+  testCompile('junit:junit:4.12')
+  testCompile('org.mockito:mockito-core:2.7.9')
+}

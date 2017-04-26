@@ -1,0 +1,10 @@
+<div class="deploy">
+	<h1>Deploy New Instance</h1>
+	<div style="float: left; margin-top: 2.25%; margin-left: 4.25%;">
+		<ng2-completer placeholder="Service" style="font-size: 20px; font-weight: bolder; margin: 0;" #serviceName [(ngModel)]="nodeChildren" [datasource]="dataService" [minSearchLength]="0" (click)="click()"></ng2-completer>
+	</div>
+	<div style="float: left; margin-top: 2.25%; margin-left: 4.25%;">
+		<ng2-completer placeholder="Version" style="font-size: 20px; font-weight: bolder; margin: 0;" #version [datasource]="dataServiceVersions" [minSearchLength]="0" (click)="click()" (mouseenter)="click()" (keyup.tab)="click()"></ng2-completer>
+	</div>
+	<button style="font-size: 20px; font-weight: bolder; float: left; margin-top: 2.25%; margin-left: 4.25%;" (click)="deploy()">Deploy</button>
+</div>

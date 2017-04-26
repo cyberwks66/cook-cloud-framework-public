@@ -1,0 +1,52 @@
+DESC: Test hello-world directly without any routing  
+CMD : curl -X GET http://172.17.0.6:8080/hello
+RESP: Hello
+
+DESC: Verify that routes exist at the edge
+CMD : curl -X GET http://localhost:8081/routes
+RESP: Success
+
+DESC: Verify that routes exist at the node
+CMD : curl -X GET http://localhost:8082/routes
+RESP: Success
+
+DESC: Verify that the configuration service is working
+CMD : curl -X GET http://localhost:8888/configuration/default
+RESP: "spring.rabbitmq.username":"guest"
+
+DESC: Verify that hello-world EP works thru all the routing
+CMD : curl -X GET localhost:8764/hello --header "Host: hello-world.cooksys.com:8764"
+RESP: Hello
+
+DESC: Verify that hello-world EP works thru all the routing for specific version
+CMD : curl -X GET localhost:8764/_/1/0/1/_/hello --header "Host: hello-world.cooksys.com:8764"
+RESP: Success
+
+DESC: Verify that hello-world EP works thru all the routing for specific version
+CMD : curl -X GET localhost:8764/_/1/0/2/_/hello --header "Host: hello-world.cooksys.com:8764"
+RESP: Success
+
+DESC: Verify we can create routes for hello-world for a single version
+CMD : curl -X POST localhost:8081/routes --data-binary @hello-world-route-data-1.0.1.txt --header "Content-Type: application/json"
+RESP: Success
+
+DESC: Verify we can create routes for hello-world for two versions
+CMD : curl -X POST localhost:8081/routes --data-binary @hello-world-route-data-1.0.2.txt --header "Content-Type: application/json"
+RESP: Success
+
+DESC: Verify we can create routes for hello-world for four (all) versions
+CMD : curl -X POST localhost:8081/routes --data-binary @hello-world-route-data-all.txt --header "Content-Type: application/json"
+RESP: Success
+
+DESC: Verify we can create traffic ratios for hello-world for a canary like scenario
+CMD : curl -X POST localhost:8081/routes/hello-world/ratios --data-binary @hello-world-routes-for-canary.txt --header "Content-Type: application/json"
+RESP: Success
+
+#  Cruft below here to cleanup and add or delete later
+#  curl http://ec2-54-202-9-46.us-west-2.compute.amazonaws.com:8764
+#  curl http://ec2-54-202-9-46.us-west-2.compute.amazonaws.com:8764/hello
+#  curl http://ec2-54-202-9-46.us-west-2.compute.amazonaws.com:8764/hello-world
+#  curl http://ec2-54-202-9-46.us-west-2.compute.amazonaws.com:8764/hello-world/1/0/1
+#  curl http://ec2-54-202-9-46.us-west-2.compute.amazonaws.com:8764/hello-world/hello
+#  curl --request GET --url http://localhost:8764/hello --header 'Host:hello-world.cooksys.com:8764'
+

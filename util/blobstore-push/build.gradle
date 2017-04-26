@@ -1,0 +1,14 @@
+plugins {
+  id 'com.github.johnrengelman.shadow' version '1.2.3'
+}
+
+description = 'Blobstore Push'
+
+dependencies {
+  compile project(':internal:commons')
+}
+
+apply plugin: 'application'
+apply plugin: 'com.github.johnrengelman.shadow'
+//
+mainClassName = 'com.cooksys.cloud.blobstorepush.Main'

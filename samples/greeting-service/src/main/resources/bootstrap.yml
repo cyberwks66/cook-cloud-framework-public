@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: greeting-service
+    
+server:
+  port: 8081

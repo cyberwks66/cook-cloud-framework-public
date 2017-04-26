@@ -1,0 +1,21 @@
+.container {
+	background-color: white;
+	border-radius: 10px;
+	border: 1px solid black;
+	height: 22.5em;
+	width: 99%;
+	margin: .5%;
+	text-align: center;
+}
+
+h1 {
+	margin: 0;
+	padding: 0;
+	margin-top: 1.5%;
+	font-family:  “Calibri, Optima, Candara, Verdana, Geneva, sans-serif”;
+	font-size: 25px;
+    color: #333333;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: bolder;
+}

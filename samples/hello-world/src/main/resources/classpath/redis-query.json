@@ -1,0 +1,42 @@
+{
+  "client": {
+    "name": "RedisExample"
+  },
+  "security": {
+    "request-token": "1234567890ABCDEF",
+    "api-token": "1234567890ABCDEF"
+  },
+  "query": {
+    "criteria": [
+      {
+        "lhs": {
+          "type": "reference",
+          "table": "merchant",
+          "field": "merchantId"
+        },
+        "condition": "equal",
+        "rhs": {
+          "type": "input"
+        }
+      }
+    ],
+    "selection": [
+      {
+        "table": "merchant",
+        "fields": [
+          "merchantId",
+          "merchantName",
+          "address1",
+          "address2",
+          "city",
+          "state",
+          "country",
+          "zipCode",
+          "phone",
+          "latitude",
+          "longitude"
+        ]
+      }
+    ]
+  }
+}

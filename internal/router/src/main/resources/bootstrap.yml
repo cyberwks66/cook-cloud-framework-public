@@ -1,0 +1,46 @@
+spring:
+  application:
+    name: router
+  # Discovery-first config client
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        serviceId: configuration
+
+elasticsearchLoggingAppender:
+  host: elk.platform.cooksys.com
+  port: 8889
+  indexPrefix: router
+
+server:
+  port: 8764
+
+management.security.enabled: false
+management.port: 8081
+endpoints.hystrixStream.enabled: true
+
+endpoints.cors.allowed-origins: "*"
+endpoints.cors.allowed-methods: "GET,POST,HEAD,OPTIONS"
+
+
+eureka:
+  instance:
+    metadata-map:
+      management.port: 8081
+
+# Disable the spring-cloud default filters
+zuul.DebugFilter.pre.disable: true
+zuul.FormBodyWrapperFilter.pre.disable: true
+zuul.PreDecorationFilter.pre.disable: true
+zuul.Servlet30WrapperFilter.pre.disable: true
+zuul.ServletDetectionFilter.pre.disable: true
+zuul.RibbonRoutingFilter.route.disable: true
+zuul.SendForwardFilter.route.disable: true
+zuul.SimpleHostRoutingFilter.route.disable: true
+
+hystrix.command.default.execution.isolation.strategy: SEMAPHORE
+hystrix.command.default.fallback.isolation.semaphore.maxConcurrentRequests: 100
+logging.level.root: WARN
+
+

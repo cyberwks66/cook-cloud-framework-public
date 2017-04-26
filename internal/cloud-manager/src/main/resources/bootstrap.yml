@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: cloud-manager
+  # Discovery-first config client
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        serviceId: configuration
+
+management.security.enabled: false
+
+ecs.serviceCluster: Demo
+
+cluster.leaderElection: true
+server.port: 8080
+
+

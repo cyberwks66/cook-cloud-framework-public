@@ -1,0 +1,7 @@
+.contentHolder {
+	width: 100%;
+	min-height: 100%;
+	background-color: lightgray;
+	margin: 0;
+	overflow: auto;
+}

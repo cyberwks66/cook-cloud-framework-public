@@ -1,0 +1,272 @@
+[
+  {
+    "_id": "c5a7c980-1982-11e7-ba0b-65723505d1c9",
+    "_type": "dashboard",
+    "_source": {
+      "title": "Cook Cloud Framework",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"col\":1,\"id\":\"786b7080-1a37-11e7-8551-9dcf20141bc0\",\"panelIndex\":1,\"row\":1,\"size_x\":3,\"size_y\":3,\"type\":\"visualization\"},{\"col\":4,\"id\":\"22a6b190-1a38-11e7-8551-9dcf20141bc0\",\"panelIndex\":2,\"row\":1,\"size_x\":4,\"size_y\":3,\"type\":\"visualization\"},{\"col\":8,\"id\":\"9f943330-1a38-11e7-8551-9dcf20141bc0\",\"panelIndex\":3,\"row\":1,\"size_x\":3,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"8ce5b100-1a3d-11e7-8551-9dcf20141bc0\",\"panelIndex\":4,\"row\":4,\"size_x\":3,\"size_y\":3,\"type\":\"visualization\"},{\"col\":4,\"id\":\"eb37a830-1a3d-11e7-8551-9dcf20141bc0\",\"panelIndex\":5,\"row\":4,\"size_x\":4,\"size_y\":3,\"type\":\"visualization\"},{\"col\":8,\"id\":\"46f64a50-1a3e-11e7-8551-9dcf20141bc0\",\"panelIndex\":6,\"row\":4,\"size_x\":3,\"size_y\":3,\"type\":\"visualization\"},{\"col\":11,\"id\":\"fecb7290-1a3e-11e7-8551-9dcf20141bc0\",\"panelIndex\":7,\"row\":1,\"size_x\":2,\"size_y\":3,\"type\":\"visualization\"},{\"col\":11,\"id\":\"afae3160-1a3f-11e7-945a-fdd8a92e5272\",\"panelIndex\":8,\"row\":4,\"size_x\":2,\"size_y\":3,\"type\":\"visualization\"},{\"size_x\":6,\"size_y\":3,\"panelIndex\":9,\"type\":\"visualization\",\"id\":\"2d514760-1a40-11e7-945a-fdd8a92e5272\",\"col\":1,\"row\":7}]",
+      "optionsJSON": "{\"darkTheme\":false}",
+      "uiStateJSON": "{\"P-9\":{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "5ba06290-1982-11e7-ba0b-65723505d1c9",
+    "_type": "search",
+    "_source": {
+      "title": "turbine-airlines-1",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"turbine-*\",\"highlightAll\":true,\"filter\":[{\"$state\":{\"store\":\"appState\"},\"meta\":{\"alias\":null,\"disabled\":false,\"index\":\"turbine-*\",\"key\":\"name\",\"negate\":false,\"value\":\"airlines v1.0.1\"},\"query\":{\"match\":{\"name\":{\"query\":\"airlines v1.0.1\",\"type\":\"phrase\"}}}},{\"$state\":{\"store\":\"appState\"},\"meta\":{\"alias\":null,\"disabled\":false,\"index\":\"turbine-*\",\"key\":\"query\",\"negate\":false,\"value\":\"{\\\"range\\\":{\\\"timestamp\\\":{\\\"gt\\\":\\\"now-1m\\\"}}}\"},\"query\":{\"range\":{\"timestamp\":{\"gt\":\"now-1m\"}}}}],\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}"
+      }
+    }
+  },
+  {
+    "_id": "117715f0-1a37-11e7-8551-9dcf20141bc0",
+    "_type": "search",
+    "_source": {
+      "title": "Airlines 1.0.1 Requests",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"router-*\",\"highlightAll\":true,\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[{\"meta\":{\"negate\":false,\"index\":\"router-*\",\"key\":\"serviceId\",\"value\":\"airlines\",\"disabled\":false,\"alias\":null},\"query\":{\"match\":{\"serviceId\":{\"query\":\"airlines\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}},{\"meta\":{\"negate\":false,\"index\":\"router-*\",\"key\":\"routeVersion\",\"value\":\"1.0.1\",\"disabled\":false,\"alias\":null},\"query\":{\"match\":{\"routeVersion\":{\"query\":\"1.0.1\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}]}"
+      }
+    }
+  },
+  {
+    "_id": "3109e9f0-1a3d-11e7-8551-9dcf20141bc0",
+    "_type": "search",
+    "_source": {
+      "title": "Airlines Requests",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"router-*\",\"highlightAll\":true,\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[{\"$state\":{\"store\":\"appState\"},\"meta\":{\"alias\":null,\"disabled\":false,\"index\":\"router-*\",\"key\":\"serviceId\",\"negate\":false,\"value\":\"airlines\"},\"query\":{\"match\":{\"serviceId\":{\"query\":\"airlines\",\"type\":\"phrase\"}}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "849150e0-1add-11e7-aa19-dbcb05f4b1a7",
+    "_type": "search",
+    "_source": {
+      "title": "Airlines v1.0.1",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"turbine-*\",\"highlightAll\":true,\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[{\"meta\":{\"negate\":false,\"index\":\"turbine-*\",\"key\":\"name\",\"value\":\"airlines v1.0.1\",\"disabled\":false,\"alias\":null},\"query\":{\"match\":{\"name\":{\"query\":\"airlines v1.0.1\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}]}"
+      }
+    }
+  },
+  {
+    "_id": "23562db0-1983-11e7-ba0b-65723505d1c9",
+    "_type": "visualization",
+    "_source": {
+      "title": "Airlines 1.0.1 Metrics",
+      "visState": "{\"title\":\"Airlines 1.0.1 Metrics\",\"type\":\"metric\",\"params\":{\"fontSize\":60,\"handleNoResults\":true},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"errorCount\",\"customLabel\":\"Average Error Count Last 5 mins\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"requestCount\",\"customLabel\":\"Average Request Count Last 5 mins\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "5ba06290-1982-11e7-ba0b-65723505d1c9",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "2ba62780-19d4-11e7-a9c8-0db70e960291",
+    "_type": "visualization",
+    "_source": {
+      "title": "cook-week-over-week-delta",
+      "visState": "{\"type\":\"timelion\",\"title\":\"cook-week-over-week-delta\",\"params\":{\"expression\":\".es().label(\\\"Original\\\"),.es(offset=-1w).label(\\\"One week offset\\\"),.es().subtract(.es(offset=-1w)).label(\\\"Difference\\\").lines(steps=1,fill=2,width=0)\",\"interval\":\"auto\"}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{}"
+      }
+    }
+  },
+  {
+    "_id": "20132250-1a20-11e7-8407-2f5eeab00768",
+    "_type": "visualization",
+    "_source": {
+      "title": "turbine-moving-avg",
+      "visState": "{\"type\":\"timelion\",\"title\":\"turbine-moving-avg\",\"params\":{\"expression\":\".es(index='turbine-*'),.es(index=turbine-*).movingaverage(12).label('12hr moving average')\",\"interval\":\"auto\"}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{}"
+      }
+    }
+  },
+  {
+    "_id": "22a6b190-1a38-11e7-8551-9dcf20141bc0",
+    "_type": "visualization",
+    "_source": {
+      "title": "Airlines 1.0.1 Response Time",
+      "visState": "{\"title\":\"Airlines 1.0.1 Response Time\",\"type\":\"line\",\"params\":{\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"showCircles\":true,\"interpolate\":\"linear\",\"scale\":\"linear\",\"drawLinesBetweenPoints\":true,\"radiusRatio\":9,\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"responseTime\",\"customLabel\":\"Response Time\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"timestamp\",\"interval\":\"m\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "117715f0-1a37-11e7-8551-9dcf20141bc0",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "2d514760-1a40-11e7-945a-fdd8a92e5272",
+    "_type": "visualization",
+    "_source": {
+      "title": "Edge Router Errors",
+      "visState": "{\"title\":\"Edge Router Errors\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"showTotal\":false,\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"errorMessage.keyword\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}",
+      "description": "",
+      "savedSearchId": "3109e9f0-1a3d-11e7-8551-9dcf20141bc0",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "786b7080-1a37-11e7-8551-9dcf20141bc0",
+    "_type": "visualization",
+    "_source": {
+      "title": "Airlines 1.0.1 TPS",
+      "visState": "{\"title\":\"Airlines 1.0.1 TPS\",\"type\":\"line\",\"params\":{\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"showCircles\":true,\"interpolate\":\"linear\",\"scale\":\"linear\",\"drawLinesBetweenPoints\":true,\"radiusRatio\":9,\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"timestamp\",\"interval\":\"s\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{},\"customLabel\":\"Requests per second\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "117715f0-1a37-11e7-8551-9dcf20141bc0",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "9f943330-1a38-11e7-8551-9dcf20141bc0",
+    "_type": "visualization",
+    "_source": {
+      "title": "Airlines 1.0.1 Response Codes per minute",
+      "visState": "{\"title\":\"Airlines 1.0.1 Response Codes per minute\",\"type\":\"histogram\",\"params\":{\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"timestamp\",\"interval\":\"m\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"responseCode.keyword\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"meta\":{\"negate\":false,\"index\":\"router-*\",\"key\":\"serviceId\",\"value\":\"airlines\",\"disabled\":false,\"alias\":null},\"query\":{\"match\":{\"serviceId\":{\"query\":\"airlines\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}},{\"meta\":{\"negate\":false,\"index\":\"router-*\",\"key\":\"routeVersion\",\"value\":\"1.0.1\",\"disabled\":false,\"alias\":null},\"query\":{\"match\":{\"routeVersion\":{\"query\":\"1.0.1\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}],\"index\":\"router-*\",\"highlightAll\":true,\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}"
+      }
+    }
+  },
+  {
+    "_id": "eb37a830-1a3d-11e7-8551-9dcf20141bc0",
+    "_type": "visualization",
+    "_source": {
+      "title": "Airlines 1.0.2 Response Times",
+      "visState": "{\"title\":\"Airlines 1.0.2 Response Times\",\"type\":\"line\",\"params\":{\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"showCircles\":true,\"interpolate\":\"linear\",\"scale\":\"linear\",\"drawLinesBetweenPoints\":true,\"radiusRatio\":9,\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"responseTime\",\"customLabel\":\"Response Time\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"timestamp\",\"interval\":\"m\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"$state\":{\"store\":\"appState\"},\"meta\":{\"alias\":null,\"disabled\":false,\"index\":\"router-*\",\"key\":\"serviceId\",\"negate\":false,\"value\":\"airlines\"},\"query\":{\"match\":{\"serviceId\":{\"query\":\"airlines\",\"type\":\"phrase\"}}}}],\"index\":\"router-*\",\"highlightAll\":true,\"query\":{\"query_string\":{\"query\":\"routeVersion:1.0.2\",\"analyze_wildcard\":true}}}"
+      }
+    }
+  },
+  {
+    "_id": "8ce5b100-1a3d-11e7-8551-9dcf20141bc0",
+    "_type": "visualization",
+    "_source": {
+      "title": "Airlines 1.0.2 TPS",
+      "visState": "{\"title\":\"Airlines 1.0.2 TPS\",\"type\":\"line\",\"params\":{\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"showCircles\":true,\"interpolate\":\"linear\",\"scale\":\"linear\",\"drawLinesBetweenPoints\":true,\"radiusRatio\":9,\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"timestamp\",\"interval\":\"s\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{},\"customLabel\":\"Requests per second\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"$state\":{\"store\":\"appState\"},\"meta\":{\"alias\":null,\"disabled\":false,\"index\":\"router-*\",\"key\":\"serviceId\",\"negate\":false,\"value\":\"airlines\"},\"query\":{\"match\":{\"serviceId\":{\"query\":\"airlines\",\"type\":\"phrase\"}}}}],\"index\":\"router-*\",\"highlightAll\":true,\"query\":{\"query_string\":{\"query\":\"routeVersion:1.0.2\",\"analyze_wildcard\":true}}}"
+      }
+    }
+  },
+  {
+    "_id": "fecb7290-1a3e-11e7-8551-9dcf20141bc0",
+    "_type": "visualization",
+    "_source": {
+      "title": "Airlines 1.0.1 Response Pie",
+      "visState": "{\"title\":\"Airlines 1.0.1 Response Pie\",\"type\":\"pie\",\"params\":{\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"isDonut\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"responseCode.keyword\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "117715f0-1a37-11e7-8551-9dcf20141bc0",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "46f64a50-1a3e-11e7-8551-9dcf20141bc0",
+    "_type": "visualization",
+    "_source": {
+      "title": "Airlines 1.0.2 Response Codes per minute",
+      "visState": "{\"title\":\"Airlines 1.0.2 Response Codes per minute\",\"type\":\"histogram\",\"params\":{\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"timestamp\",\"interval\":\"m\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"responseCode.keyword\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"$state\":{\"store\":\"appState\"},\"meta\":{\"alias\":null,\"disabled\":false,\"index\":\"router-*\",\"key\":\"serviceId\",\"negate\":false,\"value\":\"airlines\"},\"query\":{\"match\":{\"serviceId\":{\"query\":\"airlines\",\"type\":\"phrase\"}}}}],\"index\":\"router-*\",\"highlightAll\":true,\"query\":{\"query_string\":{\"query\":\"routeVersion:1.0.2\",\"analyze_wildcard\":true}}}"
+      }
+    }
+  },
+  {
+    "_id": "afae3160-1a3f-11e7-945a-fdd8a92e5272",
+    "_type": "visualization",
+    "_source": {
+      "title": "Airlines 1.0.2 Response Pie",
+      "visState": "{\"title\":\"Airlines 1.0.2 Response Pie\",\"type\":\"pie\",\"params\":{\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"isDonut\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"responseCode.keyword\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"$state\":{\"store\":\"appState\"},\"meta\":{\"alias\":null,\"disabled\":false,\"index\":\"router-*\",\"key\":\"serviceId\",\"negate\":false,\"value\":\"airlines\"},\"query\":{\"match\":{\"serviceId\":{\"query\":\"airlines\",\"type\":\"phrase\"}}}}],\"index\":\"router-*\",\"highlightAll\":true,\"query\":{\"query_string\":{\"query\":\"routeVersion:1.0.2\",\"analyze_wildcard\":true}}}"
+      }
+    }
+  }
+]

@@ -1,0 +1,15 @@
+[
+  {
+    "version": "1.0.1",
+    "trafficRatio": 9,
+    "accuracy": "MINOR",
+    "excludeVersions": [
+      "1.0.3"
+    ]
+  },
+  {
+    "version": "1.0.3",
+    "trafficRatio": 1,
+    "accuracy": "PATCH" 
+  }
+]

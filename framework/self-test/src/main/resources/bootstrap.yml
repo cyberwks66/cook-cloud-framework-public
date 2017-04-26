@@ -1,0 +1,20 @@
+server:
+  port: 8800
+
+management:
+  security:
+    enabled: false
+
+spring:
+  application:
+    name: self-test
+  cloud:
+    bus:
+      enabled: true
+    # Discovery-first config client
+    config:
+      discovery:
+        enabled: true
+        serviceId: configuration
+
+

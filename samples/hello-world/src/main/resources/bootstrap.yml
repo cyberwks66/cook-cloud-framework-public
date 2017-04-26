@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: hello-world
+    # Discovery-first config client
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        serviceId: configuration
+
+server:
+  port: 8080
+
+hello-world:
+  name: "World"
+  greeting: "Hello"
+

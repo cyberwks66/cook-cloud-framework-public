@@ -1,0 +1,10 @@
+description = 'Service Monitor'
+
+dependencies {
+    compile project(':internal:commons')
+    compile group: 'com.amazonaws', name: 'aws-java-sdk', version: '1.11.109'
+
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.mockito:mockito-core:2.7.9'
+
+}

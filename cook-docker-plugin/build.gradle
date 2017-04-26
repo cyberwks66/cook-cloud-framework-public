@@ -1,0 +1,42 @@
+group 'com.cooksys'
+version '0.1.0-SNAPSHOT'
+
+apply plugin: 'maven'
+apply plugin: 'groovy'
+
+repositories {
+    mavenLocal()
+    maven {
+        url 'http://dev.cooksys.com/nexus/repository/maven-public/'
+    }
+    mavenCentral()
+}
+
+dependencies {
+    compile gradleApi()
+    compile localGroovy()
+
+    compile 'com.bmuschko:gradle-docker-plugin:3.0.3'
+}
+
+uploadArchives {
+    repositories {
+
+        if(project.hasProperty("nexusUrl")) {
+            mavenDeployer {
+
+                def nexusRepo = project.nexusUrl + 'repository/maven-' + (project.version.indexOf('SNAPSHOT') > 0 ? 'snapshots' : 'releases')
+
+                repository(url: nexusRepo) {
+                    if(project.hasProperty("nexusUser") && project.hasProperty("nexusPass")) {
+                        authentication(userName: project.nexusUser, password: project.nexusPass)
+                    }
+                }
+
+                pom.version = project.version
+                pom.artifactId = project.archivesBaseName
+                pom.groupId = project.group
+            }
+        }
+    }
+}

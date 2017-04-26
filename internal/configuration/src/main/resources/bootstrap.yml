@@ -1,0 +1,22 @@
+spring:
+  main:
+    banner-mode: "off"
+  application:
+    name: configuration
+  cloud:
+    config:
+      server:
+        bootstrap: true
+    bus:
+      enabled: true
+
+management:
+  security:
+    enabled: false
+
+server:
+  port: 8888
+
+logging:
+  level:
+    root: WARN

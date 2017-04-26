@@ -1,0 +1,14 @@
+<div class="thirdContainer">
+	<h1>Traffic Ratios for: AIRLINES</h1>
+	<div class="leftDial">
+		<appDial #blueDial [(value)]="blueValue" [options]="blueOptions" (mouseup)="update()" (mouseenter)="lastElem = 1" (click)="click(1)"></appDial>
+	</div>
+	<div class="buttonDiv">
+		<button style="float: left; margin-top:3.8%; position: relative; height: 100%; border: 1px solid lightgray;" (click)="confirm()">
+			<i style="display: flex; align-items: center; justify-content: center; height: 1.5em;" class="material-icons app-toolbar-menu">done</i>
+		</button>
+	</div>
+	<div class="rightDial" *ngIf="greenValue >= 0">
+		<appDial #greenDial [(value)]="greenValue" [options]="greenOptions" (mouseup)="update()" (mouseenter)="lastElem = 2" (click)="click(2)"></appDial>
+	</div>
+</div>

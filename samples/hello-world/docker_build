@@ -1,0 +1,2 @@
+docker rmi -f hello-world
+docker build -t hello-world ./src/main/docker/.

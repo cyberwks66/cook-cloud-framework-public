@@ -1,0 +1,3 @@
+busTrace:
+  rabbitmq:
+    host: localhost

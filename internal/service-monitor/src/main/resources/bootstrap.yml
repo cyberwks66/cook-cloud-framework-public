@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: service-monitor
+  # Discovery-first config client
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        serviceId: configuration
+
+management.security.enabled: false
+cluster.leaderElection: true
+
+serviceMonitor:
+  errorPercentageThreshold: 3
+  thresholdBreachedCounterMax: 10
+

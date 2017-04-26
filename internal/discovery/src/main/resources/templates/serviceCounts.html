@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Discovery Registration</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
+            crossorigin="anonymous"></link>
+
+    <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script th:src="@{/js/jqBarGraph.1.1.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/canvasjs.min.js}"></script>
+    <script
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+            integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="serviceCountsDiv" style="height: 300px; width: 100%;"></div>
+
+
+
+
+
+
+
+</body>
+
+<script type="text/javascript">
+	window.onload = function () {
+        setTimeout(pollForData,1000);
+	}
+	function pollForData() {
+	    $.getJSON( "/widget/serviceCounts/data", function( data ) {
+            renderChart(data);
+            setTimeout(pollForData,1000);
+        });
+	}
+	function renderChart(chartDataPoints) {
+		var chart = new CanvasJS.Chart("serviceCountsDiv", {
+			title:{
+				text:"Service Instances"
+			},
+                        animationEnabled: false,
+			axisX:{
+				interval: 1,
+				gridThickness: 0,
+				labelFontSize: 12,
+				labelFontStyle: "normal",
+				labelFontWeight: "normal",
+				labelFontFamily: "Lucida Sans Unicode"
+			},
+			axisY2:{
+              interval: 1,
+				interlacedColor: "rgba(1,77,101,.2)",
+				gridColor: "rgba(1,77,101,.1)"
+			},
+			data: [
+			{
+				type: "bar",
+                name: "companies",
+				axisYType: "secondary",
+				color: "#014D65",
+				dataPoints: chartDataPoints
+			}
+			]
+		});
+        chart.render();
+    }
+</script>
+</html>

@@ -1,0 +1,18 @@
+<div class="container">
+	<h1>Set Traffic Ratio By Version</h1>
+	<div style="float: left; width: 49.75%; margin-top: 5%;">
+		<div style="float: left; margin-left: 15%;">
+			<ng2-completer placeholder="Service" style="font-size: 20px; font-weight: bolder; margin: 0;" #serviceName [(ngModel)]="nodeChildren" [datasource]="dataService" [minSearchLength]="0" (click)="click()"></ng2-completer>
+		</div>
+		<div style="float: left; margin-top: 5%; margin-left: 15%; margin-bottom: 2.25%">
+			<ng2-completer placeholder="Version" style="font-size: 20px; font-weight: bolder; margin: 0;" #version [datasource]="dataServiceVersions" [minSearchLength]="0" (click)="click()" (mouseenter)="click()" (keyup.tab)="click()"></ng2-completer>
+		</div>
+		<div style="margin-top: 28.5%;">
+			<button style="font-size: 20px; font-weight: bolder; margin: 0;" (click)="updateDial()">Select Service</button>
+			<button style="font-size: 20px; font-weight: bolder; margin: 0;" (click)="updateRatio()">Update Ratio</button>
+		</div>
+	</div>
+	<div style="float: right; width: 49.75%; margin-top: 1%;" *ngIf="isServiceSelected">
+		<appDial #soloDial [(value)]="value" [options]="options"></appDial>
+	</div>
+</div>

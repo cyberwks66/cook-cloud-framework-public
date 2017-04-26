@@ -1,0 +1,8 @@
+curl -H "Content-Type: application/json" -X POST -d '{"name":"discovery","version":"0.4.1"}' http://localhost:8765/redis-blobstore-service/install
+curl -H "Content-Type: application/json" -X POST -d '{"name":"hello-world","version":"0.4.1"}' http://localhost:8765/redis-blobstore-service/install
+curl -H "Content-Type: application/json" -X POST -d '{"name":"greeting-service","version":"0.4.1"}' http://localhost:8765/redis-blobstore-service/install
+curl -H "Content-Type: application/json" -X POST -d '{"name":"router","version":"0.4.1"}' http://localhost:8765/redis-blobstore-service/install
+curl -H "Content-Type: application/json" -X POST -d '{"name":"service-manager","version":"0.4.1"}' http://localhost:8765/redis-blobstore-service/install
+curl -H "Content-Type: application/json" -X POST -d '{"name":"turbine","version":"0.4.1"}' http://localhost:8765/redis-blobstore-service/install
+curl -H "Content-Type: application/json" -X POST -d '{"name":"query-service","version":"0.4.1"}' http://localhost:8765/redis-blobstore-service/install
+curl -H "Content-Type: application/json" -X POST -d '{"name":"redis-blobstore-service","version":"0.4.1"}' http://localhost:8765/redis-blobstore-service/install

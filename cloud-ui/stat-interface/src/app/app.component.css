@@ -1,0 +1,12 @@
+.headerComponent {
+	min-width: 100%;
+	background-color: navy;
+	border-bottom: 2px solid lightblue;
+	color: black;
+	font-size: 40px;
+	font-weight: bolder;
+}
+
+.customContent {
+	min-width:100%;
+}

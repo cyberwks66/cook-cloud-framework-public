@@ -1,0 +1,40 @@
+server:
+  port: 8763
+
+elasticsearchLoggingAppender:
+  host: elk.platform.cooksys.com
+  port: 8889
+  indexPrefix: turbine
+
+turbineUrl: http://test01.platform.cooksys.com:8762/turbine.stream
+
+management.security.enabled: false
+
+logging:
+  level:
+    root: INFO
+
+turbine:
+  cluster-name-expression: new String("default")
+  appConfig: router-edge,router-node
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://discovery:8761/eureka/
+
+spring:
+  application:
+    name: log-manager
+  # Discovery-first config client
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        serviceId: configuration

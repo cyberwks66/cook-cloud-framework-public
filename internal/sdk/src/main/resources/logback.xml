@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!-- <appender name="FILE" class="ch.qos.logback.core.FileAppender"> <file>/tmp/cloud-log/cloud.log</file>
+        Log message format <encoder> <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36}
+        contextId="%property{contextId}" consumerId="%property{consumerId}" apiName="%property{apiName}"
+        requestBody="%property{requestBody}" requestParameter="%property{requestParameter}"
+        timeTaken="%property{timeTaken}" responseCode="%property{responseCode}" eventName="%property{eventName}"
+        eventStart="%property{eventStart}" eventEnd="%property{eventEnd}" errorCode="%property{errorCode}"
+        errorMessage="%property{errorMessage}" message="%msg" %n </pattern> </encoder>
+        </appender> -->
+
+    <property name="LOG_DIR" value="/tmp/cloud-log"/>
+    <!-- Sifting file appender -->
+
+    <appender name="FILE"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+
+        <file>${LOG_DIR}/${logFileName}.log</file>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <fileNamePattern>${LOG_DIR}/${logFileName}.%i.log
+            </fileNamePattern>
+            <MinIndex>1</MinIndex>
+            <MaxIndex>5</MaxIndex>
+        </rollingPolicy>
+
+        <triggeringPolicy
+                class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <MaxFileSize>5MB</MaxFileSize>
+        </triggeringPolicy>
+
+        <encoder>
+            <!-- !!!!!!!! IMPORTANT - PATTERN MUST BE ON A SINGLE LINE, BE CAREFUL NOT TO FORMAT THIS FILE IN ECLIPSE !!!!!!!!!! -->
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} contextId="%X{contextId}" consumerId="%X{consumerId}"
+                apiName="%X{apiName}" requestBody="%X{requestBody}" requestParameter="%X{requestParameter}"
+                timeTaken="%X{timeTaken}" responseCode="%X{responseCode}" eventName="%X{eventName}"
+                eventStart="%X{eventStart}" eventEnd="%X{eventEnd}" errorCode="%X{errorCode}"
+                errorMessage="%X{errorMessage}" message="%replace(%msg){'"', '\\"'}" %n
+            </pattern>
+
+
+        </encoder>
+
+
+    </appender>
+
+    <appender name="CONSOLE"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+
+        <file>${LOG_DIR}/${logFileName}.console</file>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <fileNamePattern>${LOG_DIR}/${logFileName}.%i.console
+            </fileNamePattern>
+            <MinIndex>1</MinIndex>
+            <MaxIndex>5</MaxIndex>
+        </rollingPolicy>
+
+        <triggeringPolicy
+                class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <MaxFileSize>5MB</MaxFileSize>
+        </triggeringPolicy>
+
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n</pattern>
+        </encoder>
+
+    </appender>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        Log message format
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="ELASTICSEARCH" class="com.cooksys.cloud.sdk.core.ElasticsearchLoggingAppender"></appender>
+    <!-- Setting the root level of logging to INFO -->
+    <root level="info">
+        <appender-ref ref="CONSOLE"/>
+        <!--<appender-ref ref="FILE"/>-->
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>

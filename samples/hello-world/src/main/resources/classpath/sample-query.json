@@ -1,0 +1,34 @@
+{
+  "client": {
+    "name": "CLIexample"
+  },
+  "security": {
+    "request-token": "1234567890ABCDEF",
+    "api-token": "1234567890ABCDEF"
+  },
+  "query": {
+    "criteria": [
+      {
+        "lhs": {
+          "type": "reference",
+          "table": "_sampledata",
+          "field": "ID"
+        },
+        "condition": "equal",
+        "rhs": {
+          "type": "input"
+        }
+      }
+    ],
+    "selection": [
+      {
+        "table": "_sampledata",
+        "fields": [
+          "merchant_name",
+          "lat value",
+          "long value"
+        ]
+      }
+    ]
+  }
+}

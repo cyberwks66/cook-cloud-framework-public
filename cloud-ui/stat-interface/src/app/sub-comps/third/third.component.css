@@ -1,0 +1,46 @@
+.thirdContainer {
+	float: left;
+	min-height: 28%;
+	min-width: 99%;
+	background-color: white;
+	margin: 0 .5% .5% .5%;
+	border-radius: 10px;
+	border: 1px solid black;
+	text-align: center;
+}
+
+h1 {
+	margin: 0;
+	padding: 0;
+	margin-top: 1.5%;
+	font-family:  “Calibri, Optima, Candara, Verdana, Geneva, sans-serif”;
+	font-size: 25px;
+    color: #333333;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: bolder;
+}
+
+.leftDial {
+	float: left;
+	max-height: 28%;
+	margin-top: .5%;
+	width: 47.5%;
+	text-align: center;
+}
+
+.buttonDiv {
+	float: left;
+	max-height: 10%;
+	margin-top: 10%;
+	width: 5%;
+	text-align: center;
+}
+
+.rightDial {
+	float: left;
+	max-height: 28%;
+	margin-top: .5%;
+	width: 47.5%;
+	text-align: center;
+}

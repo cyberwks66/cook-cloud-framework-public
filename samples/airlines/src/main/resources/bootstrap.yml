@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: airlines
+    # Discovery-first config client
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        serviceId: configuration
+
+
+management.security.enabled: false
+
+server:
+  port: 8080
+

@@ -1,0 +1,76 @@
+plugins {
+    id 'org.springframework.boot' version '1.5.1.RELEASE' apply false
+}
+
+ext {
+    springCloudVersion = 'Camden.SR6'
+    docker = false
+}
+
+subprojects {
+    group = 'com.cooksys.cloud'
+    version = '0.1.0'
+
+    repositories {
+        maven {
+            jcenter()
+            url 'https://repo.spring.io/libs-snapshot'
+        }
+    }
+
+    //Kill me with FIRE
+    // Skip directories that shouldn't be included
+    if (['samples', 'framework', 'llc', 'util', 'internal'].contains(project.name)) {
+        println 'Ignoring ' + project.name
+    }
+    // Java stuff
+    else {
+        apply plugin: 'java'
+        apply plugin: 'org.springframework.boot'
+
+        dependencyManagement {
+            imports {
+                mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+            }
+        }
+
+        // Libraries, don't repackage
+        if (['commons', 'sdk'].contains(project.name)) {
+            bootRepackage {
+                enabled = false
+            }
+        } else {
+            apply plugin: 'application'
+            ext.docker = true
+            distZip.enabled = false
+            distTar.enabled = false
+        }
+
+        task buildDocker(type: Exec) {
+            dependsOn 'assemble'
+            def tempDockerFile = new File(buildDir, "Dockerfile")
+            commandLine "docker", "build", "-t", project.name, "-f", tempDockerFile.toString(), "."
+
+            doFirst {
+                def dockerFile = """
+FROM java:8
+COPY build/libs/${project.name}-${version}.jar docker-service.jar
+LABEL version=${version}
+LABEL vendor="cooksys.com"
+VOLUME /tmp
+VOLUME /target
+ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/urandom","-jar","/docker-service.jar"]"""
+
+                if (buildDir.exists()) {
+                    tempDockerFile.write(dockerFile.toString())
+                } else {
+                    println "Build dir doesn't exist : ${buildDir}"
+                }
+            }
+        }
+
+        buildDocker.onlyIf {
+            docker
+        }
+    }
+}

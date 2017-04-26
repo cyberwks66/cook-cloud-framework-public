@@ -1,0 +1,8 @@
+{
+  "serviceId": "hello-world",
+  "vHost": "hello-world.cooksys.com:8764",
+  "defaultVersion": "1.0.2",
+  "proxyRoutes": {
+    "/hello-world/1/0/1": "1.0.1"
+  }
+}

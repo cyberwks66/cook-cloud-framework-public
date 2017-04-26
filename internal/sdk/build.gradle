@@ -1,0 +1,11 @@
+dependencies {
+    compile project(':internal:commons')
+    compile 'org.springframework.cloud:spring-cloud-starter-bus-amqp'
+    compile 'org.springframework.cloud:spring-cloud-starter-hystrix'
+    compile 'org.springframework.data:spring-data-elasticsearch'
+    compile "org.springframework:spring-jms"
+    compile 'org.springframework.data:spring-data-redis:1.8.0.RELEASE'
+    compile "org.apache.activemq:activemq-broker:5.12.1"
+    compile 'com.github.zafarkhaja:java-semver:0.9.0' // utility for dealing with semantic versions
+    compile "commons-io:commons-io:1.4"
+}

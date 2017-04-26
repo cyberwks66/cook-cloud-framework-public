@@ -1,0 +1,10 @@
+# Just for debugging
+spring:
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+eureka.client.serviceUrl.defaultzone: http://localhost:8761/eureka/

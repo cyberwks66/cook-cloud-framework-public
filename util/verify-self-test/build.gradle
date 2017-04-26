@@ -1,0 +1,6 @@
+
+description = 'Verify Self Test'
+dependencies {
+    compile group: 'org.springframework', name: 'spring-web', version:'4.2.5.RELEASE'
+  compile project(':internal:commons')
+}
